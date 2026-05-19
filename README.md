@@ -115,6 +115,7 @@ Example prompts:
 
 Use slash commands when you want deterministic behavior:
 
+- `/fiux`
 - `/impeccable`
 - `/app-store-screenshots`
 - `/docx`
@@ -122,6 +123,20 @@ Use slash commands when you want deterministic behavior:
 - `/gstack-investigate`
 
 If a task is sensitive, high-stakes, or overlap-prone, slash invocation is the best UX.
+
+## Fiux quick start (recommended)
+
+If you want simple prompts with advanced output and lower token usage, start with:
+
+- `/fiux <goal> + <constraints> + <output format>`
+
+Examples:
+
+- `/fiux fix login bug and add tests`
+- `/fiux redesign this dashboard for clarity and conversion`
+- `/fiux review last commit for regressions`
+
+Full usage guide: [FIUX_GUIDE.md](FIUX_GUIDE.md)
 
 ## Best prompt patterns for better outputs
 
@@ -262,7 +277,7 @@ Every installed skill is listed below and can be invoked directly with its slash
 | emil-design-eng | $(@{Name=emil-design-eng; Command=/emil-design-eng; Use=This skill encodes Emil Kowalski's philosophy on UI polish, component design, animation decisions, and the inv...; Path=.github/skills/emil-design-eng/SKILL.md}.Command) | This skill encodes Emil Kowalski's philosophy on UI polish, component design, animation decisions, and the inv... | [.github/skills/emil-design-eng/SKILL.md](.github/skills/emil-design-eng/SKILL.md) |
 | fiux | $(@{Name=fiux; Command=/fiux; Use=Universal token-efficient execution mode for coding agents. Use ONLY when user explicitly types /fiux (or asks...; Path=.github/skills/fiux/SKILL.md}.Command) | Universal token-efficient execution mode for coding agents. Use ONLY when user explicitly types /fiux (or asks... | [.github/skills/fiux/SKILL.md](.github/skills/fiux/SKILL.md) |
 | frontend-design | $(@{Name=frontend-design; Command=/frontend-design; Use=Anthropic's original frontend-design skill (parent of `impeccable`). ONLY USE when the user explicitly types `...; Path=.github/skills/frontend-design/SKILL.md}.Command) | Anthropic's original frontend-design skill (parent of `impeccable`). ONLY USE when the user explicitly types `... | [.github/skills/frontend-design/SKILL.md](.github/skills/frontend-design/SKILL.md) |
-| huashu-design | $(@{Name=huashu-design; Command=/huashu-design; Use=花叔Design（Huashu-Design）——用HTML做高保真原型、交互Demo、幻灯片、动画、设计变�...; Path=.github/skills/huashu-design/SKILL.md}.Command) | 花叔Design（Huashu-Design）——用HTML做高保真原型、交互Demo、幻灯片、动画、设计变�... | [.github/skills/huashu-design/SKILL.md](.github/skills/huashu-design/SKILL.md) |
+| huashu-design | $(@{Name=huashu-design; Command=/huashu-design; Use=花叔Design（Huashu-Design）——用HTML做高保真原型、交互Demo、幻灯片、动画、设计变�...; Path=.github/skills/huashu-design/SKILL.md}.Command) | 花叔Design（Huashu-Design）——用HTML做高保真原型、交互Demo、幻灯片、动画、设计变�... | [.github/skills/huashu-design/SKILL.md](.github/skills/huashu-design/SKILL.md) |
 | image-to-code | $(@{Name=image-to-code; Command=/image-to-code; Use=Elite website image-to-code skill for Codex. For visually important web tasks, it must first generate the desi...; Path=.github/skills/image-to-code/SKILL.md}.Command) | Elite website image-to-code skill for Codex. For visually important web tasks, it must first generate the desi... | [.github/skills/image-to-code/SKILL.md](.github/skills/image-to-code/SKILL.md) |
 | impeccable | $(@{Name=impeccable; Command=/impeccable; Use=Use when the user wants to design, redesign, shape, critique, audit, polish, clarify, distill, harden, optimiz...; Path=.github/skills/impeccable/SKILL.md}.Command) | Use when the user wants to design, redesign, shape, critique, audit, polish, clarify, distill, harden, optimiz... | [.github/skills/impeccable/SKILL.md](.github/skills/impeccable/SKILL.md) |
 | industrial-brutalist-ui | $(@{Name=industrial-brutalist-ui; Command=/industrial-brutalist-ui; Use=Raw mechanical interfaces fusing Swiss typographic print with military terminal aesthetics. Rigid grids, extre...; Path=.github/skills/industrial-brutalist-ui/SKILL.md}.Command) | Raw mechanical interfaces fusing Swiss typographic print with military terminal aesthetics. Rigid grids, extre... | [.github/skills/industrial-brutalist-ui/SKILL.md](.github/skills/industrial-brutalist-ui/SKILL.md) |
