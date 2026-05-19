@@ -1,9 +1,11 @@
-﻿# Mapify Skills
+﻿# Copilot Skills
 
 - **caveman**: Ultra-terse response mode to reduce output tokens.
   - Test: "/caveman ultra explain this error"
 - **caveman-help**: Quick command card for caveman modes.
   - Test: "/caveman-help"
+- **fiux**: Universal token-efficient execution mode for advanced end-to-end results from simple prompts (explicit `/fiux` invocation).
+  - Test: "/fiux fix login bug and add tests"
 - **review-delta**: Token-efficient review of changed code plus direct impact.
   - Test: "/review-delta" or "review my last commit with blast radius"
 - **review-pr**: Structured PR or branch diff review with blast-radius analysis.

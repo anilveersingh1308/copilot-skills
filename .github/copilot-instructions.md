@@ -54,9 +54,10 @@ When the request is UI/design-related, evaluate in this exact order and pick the
 
 26. Use `caveman` only when the user asks for brevity, compression, or fewer tokens.
 27. Use `caveman-help` for the caveman command card.
-28. Use `review-delta` when the user asks to review changes, the last commit, or quick impact review.
-29. Use `review-pr` when the user asks to review a PR, pull request, branch diff, or diff against main.
+28. Use `fiux` only when the user explicitly types `/fiux` (or asks for Fiux mode) for token-efficient, advanced end-to-end execution from simple prompts.
+29. Use `review-delta` when the user asks to review changes, the last commit, or quick impact review.
+30. Use `review-pr` when the user asks to review a PR, pull request, branch diff, or diff against main.
 
 ## Routing — gstack-* (slash-command only)
 
-30. The `gstack-*` family (51 skills imported from garrytan/gstack: ship, investigate, autoplan, plan-*, openclaw-*, careful, guard, freeze/unfreeze, context-save/restore, retro, qa, qa-only, design-*, browse, scrape, benchmark, etc.) is invoked **only** when the user types the explicit slash command (e.g. `/gstack-ship`, `/gstack-investigate`, `/gstack-openclaw-ceo-review`). Do NOT auto-trigger any `gstack-*` skill from general phrasing — they overlap with `review-*`, `impeccable`, and `skill-creator` and would conflict.
+31. The `gstack-*` family (51 skills imported from garrytan/gstack: ship, investigate, autoplan, plan-*, openclaw-*, careful, guard, freeze/unfreeze, context-save/restore, retro, qa, qa-only, design-*, browse, scrape, benchmark, etc.) is invoked **only** when the user types the explicit slash command (e.g. `/gstack-ship`, `/gstack-investigate`, `/gstack-openclaw-ceo-review`). Do NOT auto-trigger any `gstack-*` skill from general phrasing — they overlap with `review-*`, `impeccable`, and `skill-creator` and would conflict.
