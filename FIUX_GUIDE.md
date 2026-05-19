@@ -58,6 +58,61 @@ Examples:
 3. Use explicit commands when precision matters.
 4. Ask for "concise" if you want even shorter responses.
 
+## Low-token defaults in /fiux
+
+By default, Fiux should:
+
+1. keep reasoning brief,
+2. execute directly,
+3. summarize command output,
+4. avoid long explanations,
+5. ask only one clarifying question when absolutely needed.
+
+Use `"/fiux detailed"` only when you want deeper explanation.
+
+## Token budget estimator
+
+Use this quick estimator before running a request.
+
+### Selection overhead (skill routing)
+
+1. Clear intent + low overlap: 120 to 300 tokens
+2. Normal prompt + 1 to 2 possible skills: 250 to 700 tokens
+3. Ambiguous prompt + many overlaps: 700 to 1,500+ tokens
+
+### Execution overhead (work itself)
+
+1. Small single-file edit: 400 to 1,500 tokens
+2. Medium multi-file change with validation: 1,500 to 5,000 tokens
+3. Large refactor or heavy QA loop: 5,000+ tokens
+
+### Practical total estimate
+
+Total tokens ~= selection overhead + execution overhead + response tokens
+
+### Fast budgeting examples
+
+1. `/fiux fix typo in README`:
+	- selection 150 + execution 500 + response 120 ~= 770
+2. `/fiux review last commit for regressions`:
+	- selection 300 + execution 1,400 + response 250 ~= 1,950
+3. `/fiux redesign dashboard and improve accessibility`:
+	- selection 500 + execution 3,500 + response 300 ~= 4,300
+
+## How to cut token usage by 30% to 60%
+
+1. Start with explicit slash command (`/fiux`, `/impeccable`, `/review-pr`) instead of broad natural text.
+2. Include target scope in one line (feature/file/component).
+3. Request concise output unless details are needed.
+4. Avoid mixing many goals in one prompt.
+5. Use follow-up prompts for iterations instead of restating full context.
+
+## Prompt templates (cost-optimized)
+
+1. `/fiux <single goal> in <scope>, keep <constraint>, output <format>, concise`
+2. `/fiux review <branch/commit> for <risk-type>, return only findings`
+3. `/fiux optimize <file/module> for <metric>, keep behavior unchanged`
+
 ## Skill mapping inside Fiux
 
 - Frontend: `impeccable` (default)

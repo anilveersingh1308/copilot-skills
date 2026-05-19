@@ -42,6 +42,16 @@ Run this mode only when the user explicitly invokes `/fiux` or clearly asks for 
    - short actionable statements,
    - practical next steps only.
 
+## Low-token profile (default)
+
+Always apply this profile unless the user explicitly asks for detailed output.
+
+1. Keep analysis to max 5 short bullets.
+2. Keep final response under 180 words unless code output requires more.
+3. Never dump long logs; summarize key lines only.
+4. Ask at most one clarifying question, and only if blocked.
+5. Prefer direct edits + verification over long planning text.
+
 ## Fiux workflow
 
 1. Parse user request into:
