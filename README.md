@@ -1,108 +1,159 @@
 # Copilot Skills Pack
 
-A curated, production-ready GitHub Copilot skills workspace.
+Production-ready custom skills for GitHub Copilot, with clear routing so the right skill is selected at the right time.
 
-This repository packages reusable custom skills under `.github/skills/` and a routing policy in `.github/copilot-instructions.md` so Copilot picks the right skill for the right task.
+This repository is designed to be immediately useful after clone, and easy to fork/customize for your own team workflows.
 
-## What this repo gives you
+## Why this repo exists
 
-- A large, curated skills library for frontend, docs, reviews, workflow, and experimentation.
-- Explicit routing rules to reduce overlap and accidental skill activation.
-- Slash-command-only handling for families that overlap (for example `gstack-*`).
-- A fork-friendly structure that works as soon as you clone and open in VS Code.
+Most skill packs fail in one of two ways:
 
-## Repository structure
+- Too many overlapping skills that trigger unpredictably.
+- Great skills, but poor onboarding and no clear usage patterns.
 
-- `.github/skills/`
-  - One folder per skill.
-  - Each folder contains a `SKILL.md` file (and optional assets/scripts/templates).
-- `.github/copilot-instructions.md`
-  - Workspace-level routing and priority rules.
-- `.github/skills/README.md`
-  - Human-readable index of installed skills and test prompts.
+This pack solves both:
 
-## Requirements
+- Curated skills grouped by practical outcomes.
+- Strict routing policy in `.github/copilot-instructions.md`.
+- Slash-command-only rules for overlap-prone families.
+- Fork-friendly structure with predictable maintenance.
 
-- VS Code with GitHub Copilot + Copilot Chat enabled.
-- Access to this repository (or your fork).
+## What you get
 
-## Quick start
+- Frontend/UI craftsmanship and design-specific skills.
+- App Store / Play Store screenshot generation workflows.
+- Document skills (`docx`, `pdf`, `pptx`, `xlsx`).
+- Review skills (`review-delta`, `review-pr`).
+- Engineering skills (`claude-api`, `mcp-builder`, `skill-creator`, `webapp-testing`).
+- GStack workflow family (`gstack-*`, explicit invocation only).
 
-1. Clone your fork/repo.
-2. Open the folder in VS Code.
-3. Sign in to GitHub Copilot in VS Code.
-4. Start using skills by natural prompt matching or explicit slash commands.
+Complete index: `.github/skills/README.md`
 
-## Usage
+## Repository layout
 
-### Natural routing
+```
+.github/
+  copilot-instructions.md   # routing and priority policy
+  skills/
+    <skill-name>/
+      SKILL.md              # frontmatter + behavior instructions
+      ...                   # optional assets (template/, scripts/, references/)
+  skills/README.md          # human-readable skill catalog + test prompts
+```
 
-Copilot uses `.github/copilot-instructions.md` plus each skill `description` to choose the best skill.
+## Quick start (2 minutes)
+
+1. Clone this repo (or your fork).
+2. Open it in VS Code.
+3. Sign in to GitHub Copilot and Copilot Chat.
+4. Start with either natural language prompts or slash commands.
+
+## How to use skills effectively
+
+### Option A: Natural-language routing
+
+Copilot reads:
+
+- `.github/copilot-instructions.md` (workspace routing policy)
+- each skill's `description` in `SKILL.md` (trigger surface)
 
 Example prompts:
 
-- "review this PR against main" -> `review-pr`
-- "merge these PDFs" -> `pdf`
-- "build App Store screenshots for my app" -> `app-store-screenshots`
+- `review this PR against main` -> `review-pr`
+- `merge these PDFs` -> `pdf`
+- `build App Store screenshots for my app` -> `app-store-screenshots`
+- `create a Word report with headings and TOC` -> `docx`
 
-### Explicit slash invocation (recommended for precision)
+### Option B: Explicit slash command (recommended for precision)
 
-Use slash commands when you want exact control:
+Use slash commands when you want deterministic behavior:
 
 - `/impeccable`
 - `/app-store-screenshots`
 - `/docx`
 - `/review-delta`
-- `/gstack-ship`
+- `/gstack-investigate`
 
-## Skill categories included
+If a task is sensitive, high-stakes, or overlap-prone, slash invocation is the best UX.
 
-- Frontend/UI craft and design systems
-- App Store/Play screenshot generation
-- Document tooling (`docx`, `pdf`, `pptx`, `xlsx`)
-- Review workflows (`review-delta`, `review-pr`)
-- Claude API + MCP server building
-- GStack workflow bundle (`gstack-*`, slash-command-only)
+## Best prompt patterns for better outputs
 
-See `.github/skills/README.md` for the full list.
+When asking Copilot to use a skill, include:
 
-## Fork and customize (recommended)
+- **Goal:** what success looks like.
+- **Context:** app type, audience, constraints.
+- **Output format:** code, checklist, patch, report.
+- **Priority:** speed vs polish vs strictness.
+
+Strong examples:
+
+- `Use /impeccable to redesign this pricing page for clarity and conversion. Keep existing React component structure.`
+- `Use /review-delta and focus on regressions, security risks, and missing tests.`
+- `Use /app-store-screenshots to scaffold Play Store screenshots for a finance app, clean modern style, export-ready assets.`
+
+## Routing model (important)
+
+This repo intentionally prevents skill collisions.
+
+- `impeccable` is the default for general frontend polish and redesign.
+- `frontend-design`, `design-taste-frontend`, `redesign-existing-projects`, and `emil-design-eng` are explicit-invocation only.
+- `gstack-*` is explicit-invocation only.
+
+If you change routing, keep priorities strict or trigger quality will degrade.
+
+## Forking guide (recommended)
 
 1. Fork this repository.
-2. Edit `.github/copilot-instructions.md` to match your preferred routing policy.
-3. Tune skill `description` lines in `SKILL.md` files to improve trigger quality.
-4. Add/remove skills in `.github/skills/`.
-5. Commit and push.
+2. Edit `.github/copilot-instructions.md` for your team's routing preferences.
+3. Tune `description` fields in skill frontmatter to match your wording.
+4. Remove skills you do not use to reduce accidental triggering.
+5. Add your own skills in `.github/skills/<name>/`.
+6. Keep `.github/skills/README.md` in sync.
 
-### Best practices for high trigger quality
+## Adding a new skill correctly
 
-- Keep `description` specific and explicit.
-- Prefer slash-command-only for overlapping skills.
-- Maintain clear priority ordering in routing rules.
-- Avoid broad trigger text that can steal unrelated tasks.
-
-## How to add a new skill
-
-1. Copy skill folder into `.github/skills/<skill-name>/`.
-2. Ensure `SKILL.md` frontmatter has:
-   - `name` matching folder name
-   - focused `description` trigger text
-3. If needed, include sibling assets (`template/`, `scripts/`, `references/`, etc.).
-4. Update:
+1. Copy the skill folder to `.github/skills/<skill-name>/`.
+2. Verify `SKILL.md` frontmatter:
+   - `name:` exactly matches folder name.
+   - `description:` has clear, specific trigger phrases.
+3. Copy required sibling assets (for example `template/`, `scripts/`, `references/`).
+4. Register the skill in:
    - `.github/skills/README.md`
    - `.github/copilot-instructions.md`
 5. Commit and push.
 
-## Collaboration
+## Troubleshooting
+
+### Skill is not triggering
+
+- Use slash command directly to validate it works.
+- Check `name` and folder match.
+- Tighten `description` trigger wording.
+- Verify no higher-priority routing rule is catching the prompt first.
+
+### Wrong skill triggers
+
+- Make overlapping skills explicit-invocation only.
+- Move the intended skill earlier in routing priority.
+- Narrow broad description text.
+
+### Works on one machine but not another
+
+- Ensure all `.github/` files are committed and pushed.
+- Clone the same repository/fork on the other machine.
+- Open that folder in VS Code while signed into Copilot.
+
+## Contributing
 
 Issues and PRs are welcome.
 
-When proposing changes, include:
+Please include in PRs:
 
-- what trigger behavior changed,
-- which overlapping skills were considered,
-- before/after examples.
+- Why routing changed.
+- What overlap risks were considered.
+- Before/after example prompts.
+- Any migration impact for existing users.
 
-## License and attributions
+## License and attribution
 
-Each imported skill may carry its own license and attribution requirements in its folder (for example `LICENSE.txt`, `NOTICE.md`, or source references). Keep those files intact when reusing or redistributing.
+Imported skills may include their own license/notice requirements. Keep attribution files (`LICENSE.txt`, `NOTICE.md`, source references) intact when redistributing.
