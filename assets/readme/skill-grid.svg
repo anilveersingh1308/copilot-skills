@@ -1,0 +1,53 @@
+<svg width="1400" height="560" viewBox="0 0 1400 560" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1400" height="560" rx="26" fill="#0A1020"/>
+  <text x="60" y="72" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="34" font-weight="800">Popular Skills by Outcome</text>
+  <text x="60" y="106" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="18">Use slash commands for deterministic behavior on overlap-prone tasks.</text>
+
+  <g>
+    <rect x="60" y="146" width="400" height="170" rx="18" fill="#0F172A" stroke="#22D3EE"/>
+    <text x="88" y="190" fill="#67E8F9" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700">Frontend polish</text>
+    <text x="88" y="224" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="20">/impeccable</text>
+    <text x="88" y="250" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="20">/minimalist-ui</text>
+    <text x="88" y="276" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="20">/industrial-brutalist-ui</text>
+  </g>
+
+  <g>
+    <rect x="500" y="146" width="400" height="170" rx="18" fill="#0F172A" stroke="#60A5FA"/>
+    <text x="528" y="190" fill="#93C5FD" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700">Documents</text>
+    <text x="528" y="224" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="20">/docx  /pdf</text>
+    <text x="528" y="250" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="20">/pptx  /xlsx</text>
+    <text x="528" y="276" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="20">/doc-coauthoring</text>
+  </g>
+
+  <g>
+    <rect x="940" y="146" width="400" height="170" rx="18" fill="#0F172A" stroke="#5EEAD4"/>
+    <text x="968" y="190" fill="#99F6E4" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700">Reviews</text>
+    <text x="968" y="224" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="20">/review-delta</text>
+    <text x="968" y="250" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="20">/review-pr</text>
+    <text x="968" y="276" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="20">/webapp-testing</text>
+  </g>
+
+  <g>
+    <rect x="60" y="346" width="400" height="170" rx="18" fill="#0F172A" stroke="#38BDF8"/>
+    <text x="88" y="390" fill="#7DD3FC" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700">Store assets</text>
+    <text x="88" y="424" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="20">/app-store-screenshots</text>
+    <text x="88" y="450" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="20">/image-to-code</text>
+    <text x="88" y="476" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="20">/theme-factory</text>
+  </g>
+
+  <g>
+    <rect x="500" y="346" width="400" height="170" rx="18" fill="#0F172A" stroke="#818CF8"/>
+    <text x="528" y="390" fill="#C4B5FD" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700">Engineering</text>
+    <text x="528" y="424" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="20">/claude-api</text>
+    <text x="528" y="450" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="20">/mcp-builder</text>
+    <text x="528" y="476" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="20">/skill-creator</text>
+  </g>
+
+  <g>
+    <rect x="940" y="346" width="400" height="170" rx="18" fill="#0F172A" stroke="#A78BFA"/>
+    <text x="968" y="390" fill="#DDD6FE" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700">Workflow suite</text>
+    <text x="968" y="424" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="20">/gstack-investigate</text>
+    <text x="968" y="450" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="20">/gstack-ship</text>
+    <text x="968" y="476" fill="#E2E8F0" font-family="Segoe UI, Arial, sans-serif" font-size="20">/gstack-autoplan</text>
+  </g>
+</svg>
